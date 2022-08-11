@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class OrderDeliveryCardTest {
     @Test
-    void shouldRegisterByAccountNumberDOMModification() {
+    void shouldOrderCardDelivery() {
         Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue("Барнаул");
@@ -21,7 +21,6 @@ public class OrderDeliveryCardTest {
         $("[data-test-id=phone] input").setValue("+79000000000");
         $("[data-test-id=agreement]").click();
         $$(By.className("button__text")).last().click();
-        Condition exists;
-        $("[data-test-id=notification]").shouldBe(exist, Duration.ofSeconds(10));
+        $("[data-test-id=notification]").shouldBe(visible, Duration.ofSeconds(15));
     }
 }
