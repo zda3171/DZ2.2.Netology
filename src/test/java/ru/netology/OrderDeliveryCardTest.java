@@ -16,7 +16,6 @@ public class OrderDeliveryCardTest {
         Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue("Барнаул");
-        $("[data-test-id=date] input").setValue("13.08.2022");
         $("[data-test-id=name] input").setValue("Пупов Николай");
         $("[data-test-id=phone] input").setValue("+79000000000");
         $("[data-test-id=agreement]").click();
